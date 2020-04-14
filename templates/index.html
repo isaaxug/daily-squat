@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <title>Raspberry Pi</title>
+    </head>
+    <body>
+        <div id="chart"></div>
+        <a href="/start-squat" class="btn">スクワット開始！</a>
+        <!-- 外部ライブラリの読み込み -->
+        <script src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="https://unpkg.com/dayjs"></script>
+        <!-- script.jsの読み込みとinit関数の実行 -->
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+        <script type="text/javascript">
+            // サーバーからスクワット記録を受け取る
+            const items = JSON.parse('{{ items | tojson }}');
+            // 他のJSやCSSの読み込みが終わったら、init関数を実行
+            window.onload = function() {
+                init(items);
+            }
+        </script>
+    </body>
+</html>

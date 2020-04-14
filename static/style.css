@@ -1,0 +1,35 @@
+body {
+  height: 100vh;
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background:linear-gradient(rgb(47,150,163), rgb(48,62,143));
+  font-family: sans-serif;
+  color: white;
+}
+#chart {
+  width: 600px;
+  height: 352px;
+}
+.btn {
+  font-size: 14px;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+  border: solid 2px white;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.btn-square:active {
+  color: transparent;
+  background-color: white;
+}
+#camera {
+  width: 512px;
+  height: 352px;
+  margin-bottom: 8px;
+}
